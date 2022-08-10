@@ -1,0 +1,85 @@
+.container {
+  width: 100%;
+}
+
+.section-1 {
+  display: flex;
+  justify-content: space-around;
+  min-height: 50vh;
+  margin: auto;
+  max-width: 70rem;
+}
+
+.titulo-tortas {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.3rem;
+}
+
+.hr-tortas {
+  width: 5rem;
+  margin: auto;
+}
+
+.caja-producto {
+  width: 300px;
+  border: 1px solid rgb(216, 211, 211);
+  border-radius: 5px;
+}
+
+.detalles-torta {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+button {
+  background-color: transparent;
+}
+
+.detalles-torta h5 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.detalles-torta p {
+  font-size: 20px;
+}
+.carrito-compras {
+  flex-wrap: wrap;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border: 1px solid rgb(223, 218, 218);
+  border-radius: 4px;
+  color: black;
+}
+
+.carrito-compras:hover {
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: #e382d3;
+}
+
+.carrito__icon {
+  cursor: pointer;
+}
+
+.carrito__icon i {
+  font-size: 2rem;
+  color: #e382d3;
+}
+
+.carrito__icon span {
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
+  border-radius: 100%;
+}
