@@ -28,7 +28,7 @@ function Cardsitems() {
     <>
               <div className="section-1">
               {datos.map((items,index) =>(
-                <Cards img={items.img} tortatitulo={items.tortatitulo} precio={items.precio} boton= {items.boton} />
+                <Cards key={index} img={items.img} tortatitulo={items.tortatitulo} precio={items.precio} boton= {items.boton} />
               ))}
               </div>
     </>

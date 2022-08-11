@@ -7,6 +7,7 @@ import '../Cartwidget.jsx/cartwidget.png'
 function Navbar() {
 
   const navBarItems = ["Tienda +", "Nosotros", "Contacto", "Registrate", <Cartwidget />];
+  
   window.addEventListener("scroll", function(){
     let header = document.querySelector("header");
     header.classList.toggle("abajo", window.scrollY>0);
@@ -22,7 +23,7 @@ function Navbar() {
           <div className="menu">
             <ul className="list">
             {navBarItems.map((item) => (
-              <li><a href="/">{item}</a></li>
+              <li key={item}><a href="/">{item}</a></li>
             ))}
             </ul>
           </div>
