@@ -1,6 +1,7 @@
 import React from 'react'
 import './Cards.css'
 
+
 function Cards(props) {
     const { img, tortatitulo, precio, boton} = props;
   return (
@@ -14,7 +15,7 @@ function Cards(props) {
               <h5>{tortatitulo}</h5>
               <p>Precio: ${precio}</p>
             </div>
-            <button className="carrito-compras">{boton}</button>
+            {boton}
           </div>
         </div>
     </>
