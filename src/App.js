@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar.jsx/Navbar';
 import './App.css';
-import Carditems from './components/Cards.jsx/Cardsitems';
+import ItemListContainer from './components/ItemListContainer.jsx/ItemListContainer';
 
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <Carditems />
+      <ItemListContainer />
     </>
   );
 }
