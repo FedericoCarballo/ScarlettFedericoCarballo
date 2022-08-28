@@ -27,6 +27,27 @@ const ItemListContainer = () => {
                 tortatitulo:'Chococheesecake',
                 precio:'4450',
                 boton: <Itemcount initial={0} stock={9} onAdd={onAdd}/>
+            },
+            {
+                id:4,
+                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576656032964628/TORTAS-WEB-32-300x300-removebg-preview.png',
+                tortatitulo:'Chococheesecake',
+                precio:'4450',
+                boton: <Itemcount initial={0} stock={9} onAdd={onAdd}/>
+            },
+            {
+                id:5,
+                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576656032964628/TORTAS-WEB-32-300x300-removebg-preview.png',
+                tortatitulo:'Chococheesecake',
+                precio:'4450',
+                boton: <Itemcount initial={0} stock={9} onAdd={onAdd}/>
+            },
+                        {
+                id:6,
+                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576656032964628/TORTAS-WEB-32-300x300-removebg-preview.png',
+                tortatitulo:'Chococheesecake',
+                precio:'4450',
+                boton: <Itemcount initial={0} stock={9} onAdd={onAdd}/>
             }
         ]
 

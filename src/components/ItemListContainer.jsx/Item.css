@@ -1,18 +1,18 @@
-.container {
-    width: 100%;
+
+  .container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
   }
-  
+
   .section-1 {
-    display: flex;
-    justify-content: space-around;
-    min-height: 50vh;
-    margin: auto;
-    max-width: 70rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 600px));
+    
   }
+
   
   .titulo-tortas {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-size: 1.5rem;
