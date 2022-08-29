@@ -3,11 +3,10 @@ import Cartwidget from "../Cartwidget.jsx/Cartwidget";
 import "./Navbar.css";
 import logo from "./scarlettlogo.png";
 import '../Cartwidget.jsx/cartwidget.png'
+import {NavLink} from 'react-router-dom'  
 
 function Navbar() {
 
-  const navBarItems = ["Tienda +", "Nosotros", "Contacto", "Registrate", <Cartwidget />];
-  
   window.addEventListener("scroll", function(){
     let header = document.querySelector("header");
     header.classList.toggle("abajo", window.scrollY>0);
@@ -22,9 +21,11 @@ function Navbar() {
           </a>
           <div className="menu">
             <ul className="list">
-            {navBarItems.map((item) => (
-              <li key={item}><a href="/">{item}</a></li>
-            ))}
+              <li><NavLink to="/tortas/Chocolate">Chocolate</NavLink></li>
+              <li><NavLink to="/tortas/Vainilla">Vainilla</NavLink></li>
+              <li><NavLink to="/">Contacto</NavLink></li>
+              <li><NavLink to="/">Registrate</NavLink></li>
+              <li><NavLink to="/"><Cartwidget/></NavLink></li>
             </ul>
           </div>
         </nav>

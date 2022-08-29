@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './Item'
 
-const ItemList = ({datos = []}) => {
+const ItemList = ({datos}) => {
   return (
     <>
     <div className='section-1'>
