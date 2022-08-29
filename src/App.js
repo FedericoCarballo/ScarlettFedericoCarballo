@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import ItemListContainer from './components/ItemListContainer.jsx/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer.jsx/ItemDetailContainer';
+import Footer from './components/Footer.jsx/Footer';
 
 
 
@@ -14,8 +15,9 @@ function App() {
 <Routes>
 <Route path='/' element={<ItemListContainer/>}/>
   <Route path='/tortas/:tortasId' element={<ItemListContainer/>}/>
-  <Route path='/' element={<ItemDetailContainer/>}/>
+  <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>}/>
 </Routes>
+<Footer/>
 </BrowserRouter>
     </>
   );
