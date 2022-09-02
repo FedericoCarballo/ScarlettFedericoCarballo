@@ -1,12 +1,10 @@
 import React, {useEffect, useState}from 'react'
-import Itemcount from '../Itemcount.jsx/Itemcount'
+
 import ItemList from './ItemList'
 import {useParams} from 'react-router-dom'
 
 const ItemListContainer = () => {
-    const onAdd = (cantidad) => {
-        console.log(`Compraste ${cantidad} unidades`)
-      }
+
     
         const tortas = [
             {   id:1,
@@ -14,7 +12,7 @@ const ItemListContainer = () => {
                 tortatitulo:'Minicake Bauhaus',
                 categoria:'Chocolate',
                 precio:'4950',
-                boton: <Itemcount initial={0} stock={8} onAdd={onAdd}/>
+
             },
             {
                 id:2,
@@ -22,7 +20,7 @@ const ItemListContainer = () => {
                 tortatitulo:'Hudson',
                 categoria:'Vainilla',
                 precio:'4150',
-                boton: <Itemcount initial={0} stock={4} onAdd={onAdd}/>
+
             },
             {
                 id:3,
@@ -30,7 +28,7 @@ const ItemListContainer = () => {
                 tortatitulo:'Chococheesecake',
                 categoria:'Vainilla',
                 precio:'4450',
-                boton: <Itemcount initial={0} stock={9} onAdd={onAdd}/>
+
             },
             {
                 id:4,
@@ -38,7 +36,7 @@ const ItemListContainer = () => {
                 tortatitulo:'Chococheesecake',
                 categoria:'Vainilla',
                 precio:'4450',
-                boton: <Itemcount initial={0} stock={9} onAdd={onAdd}/>
+
             },
             {
                 id:5,
@@ -46,7 +44,7 @@ const ItemListContainer = () => {
                 tortatitulo:'Chococheesecake',
                 categoria:'Chocolate',
                 precio:'4450',
-                boton: <Itemcount initial={0} stock={9} onAdd={onAdd}/>
+
             },
                         {
                 id:6,
@@ -54,7 +52,7 @@ const ItemListContainer = () => {
                 tortatitulo:'Chococheesecake',
                 categoria:'Chocolate',
                 precio:'4450',
-                boton: <Itemcount initial={0} stock={9} onAdd={onAdd}/>
+
             }
         ]
 
