@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import Itemcount from "../Itemcount.jsx/Itemcount";
 import { Link } from 'react-router-dom'
 import '../ItemDetailContainer.jsx/ItemDetail.css'
+import { useCartContext } from "../../context/CartContext";
 
 
 
 const ItemDetail = ({ datos }) => {
   const [goToCart, setGoToCart] = useState(false);
+  const {addProduct} = useCartContext()
 
   const onAdd = (cantidad) => {
     setGoToCart(true)
+    addProduct(datos, cantidad)
   };
 
   return (
@@ -17,9 +20,9 @@ const ItemDetail = ({ datos }) => {
       <div className="container">
         <div className="caja-producto">
           <div className="imagen-torta">
-            <a href="">
+            <Link to="/">
               <img src={datos.img} alt="" />
-            </a>
+            </Link>
           </div>
           <div className="detalles-torta">
             <h5>{datos.tortatitulo}</h5>

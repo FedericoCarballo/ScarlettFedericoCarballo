@@ -2,7 +2,10 @@ import React from "react";
 import "../ItemListContainer.jsx/Item.css"
 import { Link } from 'react-router-dom'
 
+
 const Item = ({carta}) => {
+
+
   return (
     <>
       <div className="container">
