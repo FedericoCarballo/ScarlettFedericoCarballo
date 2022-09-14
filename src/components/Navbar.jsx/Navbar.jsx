@@ -25,7 +25,7 @@ function Navbar() {
               <li><NavLink to="/tortas/Vainilla">Vainilla</NavLink></li>
               <li><NavLink to="/">Contacto</NavLink></li>
               <li><NavLink to="/">Registrate</NavLink></li>
-              <li><NavLink to="/"><Cartwidget/></NavLink></li>
+              <li><NavLink to="/cart"><Cartwidget/></NavLink></li>
             </ul>
           </div>
         </nav>

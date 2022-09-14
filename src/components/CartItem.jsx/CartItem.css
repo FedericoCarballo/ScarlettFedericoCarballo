@@ -1,0 +1,58 @@
+.ItemCart img {
+    width: 200px;
+}
+
+.ItemCart {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cantidad {
+    text-align: center;
+    width: 1.5rem;
+}
+
+.detalles-cart {
+    display: flex;
+}
+
+.totales {
+    display: flex;
+}
+
+.info-cart {
+    padding-top: 4rem;
+    padding-left: 4rem;
+}
+
+.info-cart h3 {
+    font-size: 1rem;
+}
+
+.info-cart p {
+    font-size: 1.3rem;
+}
+
+
+.delete {
+    padding-top: 5rem;
+    cursor: pointer;
+}
+
+.delete:hover {
+    color:#EFACD7;
+    transition: .2s ease;
+}
+
+.subtotal {
+    padding-top: 1rem;
+}
+.subtotal span {
+    font-size: 1.2rem;
+}
+
+.hr-cart {
+    width: 30rem;
+    margin: auto;
+    margin-bottom: 1rem;
+}

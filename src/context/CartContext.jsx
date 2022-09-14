@@ -16,17 +16,14 @@ const removeProduct = (id) => setCart(cart.filter(product => product.id !== id))
         setCart(newCart)
     }
 
-    console.log("carrito: ", cart)
+    const totalPrecio = () => {
+        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
+    }
 
+    const totalProductos = () => {
+        cart.reduce((acumulado, productoSeleccionado) => acumulado + productoSeleccionado.quantity, 0)
+    }
 
-
-
-
-
-
-
-
-    
 
 
 
@@ -37,7 +34,10 @@ const removeProduct = (id) => setCart(cart.filter(product => product.id !== id))
         clearCart,
         isInCart,
         removeProduct,
-        addProduct
+        addProduct,
+        totalPrecio,
+        totalProductos,
+        cart
     }}>
         {children}
     </CartContext.Provider>
