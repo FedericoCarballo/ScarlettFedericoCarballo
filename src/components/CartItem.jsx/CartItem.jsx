@@ -16,13 +16,13 @@ const CartItem = ({ product }) => {
           </div>
           <div className="info-cart">
             <h2>{product.tortatitulo}</h2>
-            <p>  x {product.precio} </p>
+            <p> {product.quantity} x {product.precio} </p>
             <div className="subtotal">
-              <span>Subtotal: ${product.quantity * product.price} </span>
+              <span>Subtotal: ${product.quantity * product.precio} </span>
             </div>
           </div>
         </section>
-        <div className="delete" onClick={removeProduct}>
+        <div onClick={ () => removeProduct(product.id)} className="delete">
           <h3>X</h3>
         </div>
       </div>

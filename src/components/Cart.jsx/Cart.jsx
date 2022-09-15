@@ -6,7 +6,7 @@ import '../Cart.jsx/Cart.css'
 
 
 const Cart = () => {
-  const { cart, totalPrice } = useCartContext()
+  const { cart, totalPrecio } = useCartContext()
   
   if (cart.length === 0) {
     return (
@@ -28,7 +28,7 @@ const Cart = () => {
 
 <div></div>
      <p>
-      total: {totalPrice()}
+      total: {totalPrecio()}
      </p>
     </>
   )
