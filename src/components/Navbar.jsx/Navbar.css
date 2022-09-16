@@ -137,6 +137,12 @@ header.abajo .logo, header.abajo ul li a {
     margin: auto;
 }
 
+.total-productos {
+    position: relative;
+    left: 5px;
+    bottom: 1rem;
+}
+
 
 
 

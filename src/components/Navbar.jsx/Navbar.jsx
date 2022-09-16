@@ -4,8 +4,10 @@ import "./Navbar.css";
 import logo from "./scarlettlogo.png";
 import '../Cartwidget.jsx/cartwidget.png'
 import {NavLink} from 'react-router-dom'  
+import { useCartContext } from '../../context/CartContext'
 
 function Navbar() {
+  const {totalProductos} = useCartContext()
 
   window.addEventListener("scroll", function(){
     let header = document.querySelector("header");
@@ -25,7 +27,8 @@ function Navbar() {
               <li><NavLink to="/tortas/Vainilla">Vainilla</NavLink></li>
               <li><NavLink to="/">Contacto</NavLink></li>
               <li><NavLink to="/">Registrate</NavLink></li>
-              <li><NavLink to="/cart"><Cartwidget/></NavLink></li>
+              <li><NavLink to="/cart"><Cartwidget/><span className="total-productos">{totalProductos () || ""}</span></NavLink></li>
+
             </ul>
           </div>
         </nav>
