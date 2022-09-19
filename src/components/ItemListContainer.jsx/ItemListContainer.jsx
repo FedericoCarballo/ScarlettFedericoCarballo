@@ -1,4 +1,5 @@
 import React, {useEffect, useState}from 'react'
+import { getFirestore, collection, getDocs, query, where} from 'firebase/firestore'
 
 import ItemList from './ItemList'
 import {useParams} from 'react-router-dom'
@@ -6,71 +7,25 @@ import {useParams} from 'react-router-dom'
 const ItemListContainer = () => {
 
     
-        const tortas = [
-            {   id:1,
-                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576655336702042/TORTAS-WEB-08-300x300-removebg-preview.png',
-                tortatitulo:'Minicake Bauhaus',
-                categoria:'Chocolate',
-                precio:'4950',
-
-            },
-            {
-                id:2,
-                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576655571587072/TORTAS-WEB-29-300x300-removebg-preview.png',
-                tortatitulo:'Hudson',
-                categoria:'Vainilla',
-                precio:'4150',
-
-            },
-            {
-                id:3,
-                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576656032964628/TORTAS-WEB-32-300x300-removebg-preview.png',
-                tortatitulo:'Chococheesecake',
-                categoria:'Vainilla',
-                precio:'4450',
-
-            },
-            {
-                id:4,
-                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576656032964628/TORTAS-WEB-32-300x300-removebg-preview.png',
-                tortatitulo:'Chococheesecake',
-                categoria:'Vainilla',
-                precio:'4450',
-
-            },
-            {
-                id:5,
-                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576656032964628/TORTAS-WEB-32-300x300-removebg-preview.png',
-                tortatitulo:'Chococheesecake',
-                categoria:'Chocolate',
-                precio:'4450',
-
-            },
-                        {
-                id:6,
-                img:'https://cdn.discordapp.com/attachments/765787078399098880/995576656032964628/TORTAS-WEB-32-300x300-removebg-preview.png',
-                tortatitulo:'Chococheesecake',
-                categoria:'Chocolate',
-                precio:'4450',
-
-            }
-        ]
+       
 
         const [datos, setDatos] = useState([])
 
         const {tortasId} = useParams()
         
         useEffect(() => {
-          const getDatos = new Promise( resolve  => {
-            setTimeout(() => {
-                resolve(tortas)
-            }, 2000);
-          });
+          const querydb = getFirestore()
+          const queryCollection = collection(querydb, 'productos')
           
           if (tortasId) {
-            getDatos.then(res => setDatos(res.filter (tortas => tortas.categoria === tortasId )) )
+            const queryFilter = query(queryCollection, where('categoria', '==', tortasId))
+            getDocs(queryFilter)
+            .then (res => setDatos(res.docs.map(productos => ({id: productos.id, ...productos.data()})))) 
+
           } else {
-            getDatos.then(res => setDatos(res))
+            getDocs(queryCollection)
+            .then (res => setDatos(res.docs.map(productos => ({id: productos.id, ...productos.data()})))) 
+
           }
           
 

@@ -27,7 +27,7 @@ function Navbar() {
               <li><NavLink to="/tortas/Vainilla">Vainilla</NavLink></li>
               <li><NavLink to="/">Contacto</NavLink></li>
               <li><NavLink to="/">Registrate</NavLink></li>
-              <li><NavLink to="/cart"><Cartwidget/><span className="total-productos">{totalProductos () || ""}</span></NavLink></li>
+              <li><NavLink to="/cart"><Cartwidget/><span className="total-productos">{totalProductos () || "0"}</span></NavLink></li>
 
             </ul>
           </div>
