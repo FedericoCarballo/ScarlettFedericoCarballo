@@ -1,0 +1,21 @@
+.compra-terminada {
+    text-decoration: none;
+    color: black;
+    border: 1px solid #d8d3d3;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin-left: 3rem;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-family: sans-serif, "Poppins";
+}
+
+.compra-terminada:hover {
+    color: #e382d3;
+    transition: .2s ease ;
+}
+
