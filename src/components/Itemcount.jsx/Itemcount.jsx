@@ -3,8 +3,11 @@ import './Itemcount.css'
 
 
 
+
 const Itemcount = ({initial, stock, onAdd}) => {
     const [count, setCount] = useState(initial)
+
+
 
   return (
     <>

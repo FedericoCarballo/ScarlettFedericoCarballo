@@ -9,10 +9,6 @@ import React from 'react';
 import CartProvider from './context/CartContext.jsx'
 
 
-
-
-
-
 function App() {
   return (
     <>

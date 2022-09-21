@@ -5,6 +5,7 @@ import logo from "./scarlettlogo.png";
 import '../Cartwidget.jsx/cartwidget.png'
 import {NavLink} from 'react-router-dom'  
 import { useCartContext } from '../../context/CartContext'
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const {totalProductos} = useCartContext()
@@ -18,9 +19,9 @@ function Navbar() {
     <>
       <header>
         <nav className="navbar">
-          <a href="/" className="logo">
+          <Link to="/" className="logo">
             <img src={logo} alt="" />
-          </a>
+          </Link>
           <div className="menu">
             <ul className="list">
               <li><NavLink to="/tortas/Chocolate">Chocolate</NavLink></li>
@@ -35,10 +36,7 @@ function Navbar() {
       </header>
       <section className="zona1"></section>
 
-      <div className="titulo-tortas">
-      <h1>Tortas</h1>
-      <hr className="hr-tortas" />
-      </div>
+
       
     </>
   );

@@ -6,7 +6,7 @@ import { useCartContext } from "../../context/CartContext";
 
 
 
-const ItemDetail = ({ datos, stock }) => {
+const ItemDetail = ({ datos }) => {
   const [goToCart, setGoToCart] = useState(false);
   const {addProduct} = useCartContext()
 
@@ -31,7 +31,7 @@ const ItemDetail = ({ datos, stock }) => {
           {
             goToCart
             ? <Link className="compra-terminada" to='/cart'>Termine su compra</Link>
-            : <Itemcount initial={1} stock={4} onAdd={onAdd} />
+            : <Itemcount initial={1} stock={datos.stock} onAdd={onAdd} />
           }
           
         </div>

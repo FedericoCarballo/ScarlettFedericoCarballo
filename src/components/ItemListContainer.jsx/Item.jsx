@@ -8,6 +8,7 @@ const Item = ({carta}) => {
 
   return (
     <>
+
       <div className="container">
         <div className="caja-producto">
           <div className="imagen-torta">
@@ -17,7 +18,7 @@ const Item = ({carta}) => {
             <h5>{carta.tortatitulo}</h5>
             <p>Precio: ${carta.precio}</p>
           </div>
-          {carta.boton}
+          <Link style={{textDecoration:"none"}} to={`/detalle/${carta.id}`}><div className="detalles-boton">Detalles</div></Link>
         </div>
       </div>
     </>

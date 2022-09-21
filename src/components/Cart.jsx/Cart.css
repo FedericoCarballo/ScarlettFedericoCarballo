@@ -1,3 +1,51 @@
 .carrito-si {
 text-align: center;
+margin-top: 2rem;
+}
+
+.total-precio {
+text-align: center;
+font-family: sans-serif, "Poppins";
+font-size: 1.5rem;
+}
+
+.terminar-compra {
+    width: 230px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: sans-serif, "Poppins";
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    border: 1px solid black;
+}
+
+.formulario-finalizar{
+    margin-top: 4rem;
+}
+
+.carrito-vacio {
+    background: url(https://i.ibb.co/kXVtgs3/shoppinh-Cart-Empty.png);
+    background-position: bottom center;
+    height: 50vh;
+    background-repeat: no-repeat;
+}
+
+.carrito-si p {
+    font-family: sans-serif, 'Poppins';
+    font-size: 1.5rem;
+}
+
+.boton-hacercompras{
+    cursor: pointer;
+    margin-top: 1rem;
+    color: black;
+    
+}
+
+.boton-hacercompras:hover{
+    color: #e382d3;
+    transition: .2s ease ;
 }
