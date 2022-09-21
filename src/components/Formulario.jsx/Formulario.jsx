@@ -29,11 +29,11 @@ const Formulario = ( {totalPrecio, cart } ) => {
     }
 
 
-    const handleClick = (e) => {
+    const handleClick = async (e) => {
         e.preventDefault()
         const db = getFirestore()
         const ordersCollection = collection(db, 'orders')
-        addDoc(ordersCollection, Formulario)
+        await addDoc(ordersCollection, formulario)
     }
 
   return (
