@@ -2,39 +2,32 @@ import React from 'react'
 import { useState } from 'react'
 import '../Formulario.jsx/Formulario.css'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { useCartContext } from '../../context/CartContext'
 
-const Formulario = ( {totalPrecio, cart } ) => {
-    const [formulario, setFormulario] = useState ({
-        buyer: {
-            email: "",
-            nombre:"",
-            apellido: "",
-            telefono: "",
-        },
+const Formulario = () => {
+const [nombre, setNombre] = useState('')
+const [apellido, setApellido] = useState('')
+const [telefono, setTel] = useState('')
+const [email, setEmail] = useState('')
+
+const { cart, totalPrecio } = useCartContext()
+
+
+function handleClick(e) {
+  e.preventDefault()
+
+  const pedido = {
+    buyer: {nombre: nombre, apellido: apellido, telefono: telefono, email: email},
+    carrito: cart,
     total: totalPrecio,
-    cart: cart
-    })
+  }
 
-    const {buyer: {email, nombre, apellido, telefono},} = formulario
-
-    const handleChange = (e) => {
-        const {name, value} = e.target;
-        setFormulario({
-            ...formulario,
-            buyer: {
-                ...formulario.buyer,
-                [name]: value
-            }
-        })
-    }
-
-
-    const handleClick = async (e) => {
-        e.preventDefault()
-        const db = getFirestore()
-        const ordersCollection = collection(db, 'orders')
-        await addDoc(ordersCollection, formulario)
-    }
+  if(!nombre || !apellido || !telefono || !email) return
+  
+  const db = getFirestore()
+  const col = collection(db, 'orders')
+  addDoc(col, pedido).then(({id}) => console.log(id))
+}
 
   return (
     <>
@@ -42,13 +35,13 @@ const Formulario = ( {totalPrecio, cart } ) => {
   <div className="form">
     <h3>Formulario de compra</h3>
     <form className="register-form">
-      <input type="text" name='nombre' placeholder="Nombre" value={nombre} onChange={handleChange} />
+      <input onChange={(e) => setNombre(e.target.value)} type="text" name='nombre' placeholder="Nombre" value={nombre} required   />
 
-      <input type="text" name='apellido' placeholder='Apellido' value={apellido} onChange={handleChange} />
+      <input onChange={(e) => setApellido(e.target.value)} type="text" name='apellido' placeholder='Apellido' value={apellido} required />
 
-      <input type="text" name='telefono' placeholder="Numero de telefono" value={telefono} onChange={handleChange}/>
+      <input onChange={(e) => setTel(e.target.value)} type="text" name='telefono' placeholder="Numero de telefono" value={telefono} required />
 
-      <input type="email" name='email' placeholder="Correo electronico" value={email} onChange={handleChange}/>
+      <input onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder="Correo electronico" value={email} required />
 
       <button type='submit' onClick={handleClick}>Enviar datos</button>
     </form>

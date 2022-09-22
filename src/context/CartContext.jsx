@@ -17,7 +17,7 @@ const removeProduct = (id) => setCart(cart.filter(product => product.id !== id))
     }
 
     const totalPrecio = () => {
-        return cart.reduce((prev, act) => prev + act.quantity * act.precio, 0)
+return cart.reduce((prev, act) => prev + act.quantity * act.precio, 0)
     }
 
     const totalProductos = () => cart.reduce((acumulado, productoSeleccionado) => acumulado + productoSeleccionado.quantity, 0)
