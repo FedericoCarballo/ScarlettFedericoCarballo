@@ -4,11 +4,13 @@ import '../Formulario.jsx/Formulario.css'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { useCartContext } from '../../context/CartContext'
 
+
 const Formulario = () => {
 const [nombre, setNombre] = useState('')
 const [apellido, setApellido] = useState('')
 const [telefono, setTel] = useState('')
 const [email, setEmail] = useState('')
+const [idCompra, setIdCompra] = useState('')
 
 const { cart, totalPrecio } = useCartContext()
 
@@ -17,16 +19,20 @@ function handleClick(e) {
   e.preventDefault()
 
   const pedido = {
-    buyer: {nombre: nombre, apellido: apellido, telefono: telefono, email: email},
-    carrito: cart,
-    total: totalPrecio,
+    buyer: {nombre: nombre,
+       apellido: apellido,
+        telefono: telefono,
+         email: email},
+    carrito: cart.map(product => ({titulo: product.tortatitulo, precio: product.precio, quantity: product.quantity})),
+    total: totalPrecio()
   }
 
-  if(!nombre || !apellido || !telefono || !email) return
+ if (!nombre || !apellido || !telefono || !email) return;
+
   
   const db = getFirestore()
   const col = collection(db, 'orders')
-  addDoc(col, pedido).then(({id}) => console.log(id))
+  addDoc(col, pedido).then(({id}) => setIdCompra(id))
 }
 
   return (
@@ -34,6 +40,7 @@ function handleClick(e) {
     <div className="login-page">
   <div className="form">
     <h3>Formulario de compra</h3>
+    <p>ID de compra:{idCompra} </p>
     <form className="register-form">
       <input onChange={(e) => setNombre(e.target.value)} type="text" name='nombre' placeholder="Nombre" value={nombre} required   />
 

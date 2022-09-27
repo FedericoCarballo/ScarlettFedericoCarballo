@@ -1,11 +1,13 @@
 import React, {useState, useContext} from 'react'
 
+
 const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext)
 
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
+
     const clearCart = () => setCart([])
 const isInCart = (id) => cart.find (product => product.id === id) ? true : false;
 const removeProduct = (id) => setCart(cart.filter(product => product.id !== id))
@@ -16,9 +18,10 @@ const removeProduct = (id) => setCart(cart.filter(product => product.id !== id))
         setCart(newCart)
     }
 
+
     const totalPrecio = () => {
-return cart.reduce((prev, act) => prev + act.quantity * act.precio, 0)
-    }
+        return cart.reduce((prev, act) => prev + act.quantity * act.precio, 0)
+      }
 
     const totalProductos = () => cart.reduce((acumulado, productoSeleccionado) => acumulado + productoSeleccionado.quantity, 0)
 
