@@ -9,7 +9,10 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const {totalProductos} = useCartContext()
-
+  window.addEventListener("scroll", function(){
+    let header = document.querySelector("header");
+    header.classList.toggle("abajo", window.scrollY>0);
+})
 
   return (
     <>
