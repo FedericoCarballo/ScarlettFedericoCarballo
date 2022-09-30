@@ -25,6 +25,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 
 }
 
@@ -40,6 +41,7 @@ header {
 
 .navbar li a:hover{
     color: #e382d3;
+    
 }
 
 
@@ -146,3 +148,61 @@ header.abajo .logo, header.abajo ul li a {
 
 
 
+
+
+
+
+
+#primary_nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+    
+
+}
+
+
+#primary_nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+
+
+}
+
+
+
+
+#primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:-10%;
+	padding:.5rem;
+    
+    
+}
+
+
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block;
+    background-color: #ffffff;
+    opacity: 0.8;
+    transition: all 1s ease;
+    border-radius: .2rem;
+}
+#primary_nav_wrap ul li:hover > ul li {
+    color: black;
+}
+
+ul li .categorias {
+    color: black;
+}

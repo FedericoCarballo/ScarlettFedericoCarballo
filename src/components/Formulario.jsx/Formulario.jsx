@@ -37,10 +37,10 @@ function handleClick(e) {
 
   return (
     <>
+    
     <div className="login-page">
   <div className="form">
     <h3>Formulario de compra</h3>
-    <p>ID de compra:{idCompra} </p>
     <form className="register-form">
       <input onChange={(e) => setNombre(e.target.value)} type="text" name='nombre' placeholder="Nombre" value={nombre} required   />
 
@@ -54,6 +54,9 @@ function handleClick(e) {
     </form>
   </div>
 </div>
+<div className='id-compra'><p>Aquí aparecerá tu ID de compra. ¡No lo pierdas!</p>
+  <span>{idCompra} </span></div>
+
     </>
   )
 }

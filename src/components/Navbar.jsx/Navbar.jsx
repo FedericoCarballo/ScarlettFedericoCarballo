@@ -10,29 +10,30 @@ import { Link } from "react-router-dom";
 function Navbar() {
   const {totalProductos} = useCartContext()
 
-  window.addEventListener("scroll", function(){
-    let header = document.querySelector("header");
-    header.classList.toggle("abajo", window.scrollY>0);
-  })
 
   return (
     <>
       <header>
-        <nav className="navbar">
-          <Link to="/" className="logo">
-            <img src={logo} alt="" />
-          </Link>
-          <div className="menu">
-            <ul className="list">
-              <li><NavLink to="/tortas/Chocolate">Chocolate</NavLink></li>
-              <li><NavLink to="/tortas/Vainilla">Vainilla</NavLink></li>
-              <li><NavLink to="/">Contacto</NavLink></li>
-              <li><NavLink to="/">Registrate</NavLink></li>
-              <li><NavLink to="/cart"><Cartwidget/><span className="total-productos">{totalProductos () || "0"}</span></NavLink></li>
+<nav id="primary_nav_wrap" className="navbar">
+  <Link to="/" className="logo">
+    <img src={logo} alt="" />
+  </Link>
 
-            </ul>
-          </div>
-        </nav>
+  <div className="menu">
+<ul className="list">
+<li><NavLink to="/"> Inicio</NavLink></li>
+  <li><NavLink to="/">Tortas</NavLink>
+    <ul className="categorias-tortas">
+      <li><NavLink className="categorias" to="/tortas/Vainilla">Vainilla</NavLink></li>
+      <li><NavLink className="categorias" to="/tortas/Chocolate">Chocolate</NavLink></li>
+    </ul>
+  </li>
+  <li><NavLink to="/">Contacto</NavLink></li>
+      <li><NavLink to="/">Sobre Nosotros</NavLink></li>
+      <li><NavLink to="/cart"><Cartwidget/><span className="total-productos">{totalProductos () || "0"}</span></NavLink></li>
+</ul>
+</div>
+</nav>
       </header>
       <section className="zona1"></section>
 

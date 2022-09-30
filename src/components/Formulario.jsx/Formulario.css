@@ -34,13 +34,34 @@
   cursor: pointer;
   background-color: #f2f2f2;
 }
-.form button:hover,.form button:active,.form button:focus {
+.form button:hover {
   background: #EFADD7;
   color: white;
+  transition: all .2s ease;
 }
+
+.form button:active {
+  background: #e634a4e0;
+}
+
+
 
 .form h3 {
     margin-bottom: 2rem;
+}
+
+.id-compra {
+  text-align: center;
+}
+
+.id-compra p {
+  font-size: 1.2rem;
+  font-family: sans-serif, 'Poppins';
+  margin-bottom: 1rem;
+}
+
+.id-compra span {
+  font-style:oblique ;
 }
 
 
