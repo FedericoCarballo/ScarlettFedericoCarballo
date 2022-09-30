@@ -12,7 +12,7 @@ const [telefono, setTel] = useState('')
 const [email, setEmail] = useState('')
 const [idCompra, setIdCompra] = useState('')
 
-const { cart, totalPrecio } = useCartContext()
+const { cart, totalPrecio, clearCart } = useCartContext()
 
 
 function handleClick(e) {
@@ -51,6 +51,7 @@ function handleClick(e) {
       <input onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder="Correo electronico" value={email} required />
 
       <button type='submit' onClick={handleClick}>Enviar datos</button>
+      <button type='submit' onClick={clearCart} style={{marginTop:"1rem"}}>Limpiar carrito</button>
     </form>
   </div>
 </div>
