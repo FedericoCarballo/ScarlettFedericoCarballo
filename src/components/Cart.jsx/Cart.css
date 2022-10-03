@@ -49,3 +49,11 @@ font-size: 1.5rem;
     color: #e382d3;
     transition: .2s ease ;
 }
+
+@media only screen and (max-width: 360px) {
+    .carrito-vacio {
+    background: url(https://cdn.discordapp.com/attachments/987629512449720340/1026578404595744858/shoppinh-Cart-Empty_1.png);
+    background-position:center;
+    background-repeat: no-repeat;
+}
+}

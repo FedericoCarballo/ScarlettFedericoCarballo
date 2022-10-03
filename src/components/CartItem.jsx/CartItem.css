@@ -56,3 +56,42 @@
     margin: auto;
     margin-bottom: 1rem;
 }
+
+@media only screen and (max-width: 360px) {
+    .ItemCart img {
+        width: 120px;
+    }
+    .info-cart {
+        padding-top: 1rem;
+        padding-left: 1rem;
+    }
+
+    .info-cart h2 {
+        font-size: 20px;
+    }
+
+    .info-cart p {
+        font-size: 18px;
+    }
+
+    .subtotal span {
+        font-size: 1rem;
+    }
+
+    .ItemCart {
+    margin-top: 5rem;
+    }
+
+    .delete {
+        padding-top: 3rem;
+        cursor: pointer;
+    }
+
+    .hr-cart {
+        width: 10rem;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+
