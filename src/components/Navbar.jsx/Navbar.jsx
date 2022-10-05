@@ -7,6 +7,7 @@ import {NavLink} from 'react-router-dom'
 import { useCartContext } from '../../context/CartContext'
 import { Link } from "react-router-dom";
 
+
 function Navbar() {
   const {totalProductos} = useCartContext()
   window.addEventListener("scroll", function(){
@@ -14,13 +15,18 @@ function Navbar() {
     header.classList.toggle("abajo", window.scrollY>0);
 })
 
+
+
   return (
     <>
       <header>
+
+
 <nav id="primary_nav_wrap" className="navbar">
   <Link to="/" className="logo">
     <img src={logo} alt="" />
   </Link>
+
 
   <div className="menu">
 <ul className="list">
