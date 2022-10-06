@@ -115,6 +115,22 @@ display: grid;
     justify-content: center;
   }
   
+  .categorias {
+display: flex;
+justify-content: space-around;
+  }
+
+.categorias .categorias-torta {
+  text-decoration: none;
+  color: black;
+  
+}
+
+.categorias .categorias-torta:hover {
+  color: #e382d3;
+  transition: .3s ease;
+}
+
   @media only screen and (max-width: 1149px) {
 
     .section-1 {

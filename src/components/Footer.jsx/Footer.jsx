@@ -14,7 +14,7 @@ const Footer = () => {
       </section>
 
       <section className="secciones-footer">
-        <nav>
+        <nav className='navbar-menu'>
           <ul>
             <li><Link to="/">Inicio</Link></li>
             <li><Link to="/">Servicios</Link></li>

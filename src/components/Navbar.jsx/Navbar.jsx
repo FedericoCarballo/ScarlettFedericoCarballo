@@ -8,6 +8,8 @@ import { useCartContext } from '../../context/CartContext'
 import { Link } from "react-router-dom";
 
 
+
+
 function Navbar() {
   const {totalProductos} = useCartContext()
   window.addEventListener("scroll", function(){
@@ -22,27 +24,27 @@ function Navbar() {
       <header>
 
 
-<nav id="primary_nav_wrap" className="navbar">
-  <Link to="/" className="logo">
+
+      <nav>
+        <input type="checkbox" id="check" />
+        <label htmlFor="check" className="checkbtn">
+            <img src="https://cdn.discordapp.com/attachments/987629512449720340/1027291570774495272/menu.png" alt="" />
+        </label>
+        <Link to="/" className="logo">
     <img src={logo} alt="" />
   </Link>
-
-
-  <div className="menu">
-<ul className="list">
+  <ul className="ul-listas">
 <li><NavLink to="/"> Inicio</NavLink></li>
-  <li><NavLink to="/">Tortas</NavLink>
-    <ul className="categorias-tortas">
-      <li><NavLink className="categorias" to="/tortas/Vainilla">Vainilla</NavLink></li>
-      <li><NavLink className="categorias" to="/tortas/Chocolate">Chocolate</NavLink></li>
-    </ul>
+  <li><NavLink to="/">Listado de Tortas</NavLink>
   </li>
   <li><NavLink to="/">Contacto</NavLink></li>
       <li><NavLink to="/">Sobre Nosotros</NavLink></li>
       <li><NavLink to="/cart"><Cartwidget/><span className="total-productos">{totalProductos () || "0"}</span></NavLink></li>
 </ul>
-</div>
-</nav>
+    </nav>
+
+
+
       </header>
       <section className="zona1"></section>
 

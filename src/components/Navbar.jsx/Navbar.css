@@ -56,9 +56,7 @@ header {
 }
 
 
-.bolsa-compra {
-    width: 30px;
-}
+
 
 .list {
     list-style: none;
@@ -66,9 +64,6 @@ header {
     gap: 20px;
 }
 
-#toggler, .navbar label {
-    display: none;
-}
 
 .zona1 {
     background: url(https://scarlett.com.ar/wp-content/uploads/2021/03/DSC4943-1-scaled.jpg);
@@ -203,44 +198,92 @@ header.abajo .logo, header.abajo ul li a {
     color: black;
 }
 
-ul li .categorias {
+
+.categorias-tortas li .categorias {
     color: black;
 }
 
 
-.bars__menu{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+
+
+
+
+
+
+ .ul-listas{
+    float: right;
+    margin-right: 20px;
+}
+nav .ul-listas li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav .ul-listas li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.7s;
+    margin: 0 20px 0 20px;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav .ul-listas li a:hover {
+    color: #e382d3;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
     cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
 }
 
-.bars__menu span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #e382d3;
-    margin-top: 6px;
-    transform-origin: 0px 100%;
-    transition: all 600ms;
+
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav .ul-listas li a{
+        font-size: 16px;
+    }
 }
 
-.activeline1__bars-menu{
-    transform: rotate(45deg) translate(-2px, 1px);
-}
-
-.activeline3__bars-menu{
-    transform: rotate(-45deg) translate(-4px, 2px);
-}
-
-.activeline2__bars-menu {
-    opacity: 0;
-    margin-left: -30px;
-}
-
-@media only screen and (max-width: 992px) {
-    
+@media (max-width: 1019px){
+    .checkbtn{
+        display: block;
+    }
+    .ul-listas{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #f0e5e5;
+        opacity: .9;
+        top: 110px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav .ul-listas li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav .ul-listas li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: #e382d3;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
 }
